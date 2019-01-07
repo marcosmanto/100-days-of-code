@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: blueviolet;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    svg {
+      height: 50vh;
+    }
+    .loader {
+      transform-origin: 50%;
+      fill: none;
+      /* stroke: lime; */
+      animation: stroke-anim 4s ease-in-out infinite, stroke-fill 4s linear infinite;
+
+      /*stroke-width: 8px;
+      stroke-dasharray: 188px 188.19px;
+      stroke-dashoffset: 150px;
+      */
+
+      stroke-linecap: round;
+      transition: all 2s ease-out;
+    }
+    .loader-outer {
+      transform-origin: 50%;
+      animation: rotate 3s linear infinite;
+    }
+    svg:hover .loader {
+      transform: rotate(360deg);
+      stroke-dashoffset: 0px;
+    }
+    @keyframes stroke-anim {
+      0% {
+        stroke-width: 8px;
+        stroke-dasharray: 188.19px 188.19px;
+        stroke-dashoffset: 0px;
+      }
+      50% { stroke-width: 2px; stroke-dashoffset: -189px;}
+      100% {
+        stroke-width: 8px;
+        stroke-dasharray: 188.19px 188.19px;
+        stroke-dashoffset: -373px;
+      }
+    }
+    @keyframes rotate {
+      from { transform: rotate(0);}
+      to { transform: rotate(360deg);}
+    }
+    @keyframes stroke-fill {
+      0% { stroke: lightblue}
+      25% { stroke: orange}
+      50% { stroke: blueviolet}
+      75% { stroke: orange}
+      85% { stroke: lightblue }
+      100% { stroke: lightblue}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg viewBox="0 0 100 100">
+      <g class="loader-outer">
+        <circle class="loader" cx="50" cy="50" r="30" style=""/>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>
