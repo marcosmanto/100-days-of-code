@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: pink;
+      }
+      .container {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container svg {
+        height: 50vh;
+        border: 1px solid #eee;
+      }
+      svg:hover .heart {
+        fill: orange;
+        transition: fill 0.7s, stroke 0.4s, stroke-width 1s,
+          stroke-dashoffset 0.75s ease-out, transform 0.45s ease-out;
+        stroke: crimson;
+        stroke-width: 2px;
+        transform: scale(0.5) rotate(45deg);
+        animation: none;
+      }
+      svg:hover {
+        border: 5px solid crimson;
+        transition: border 0.4s;
+        transform: inherit;
+      }
+      .heart {
+        fill: tomato;
+        stroke: lightblue;
+        /* transform-origin: 25px 25px; */
+        transform-origin: 50%;
+        transition: all 0.5s;
+        cursor: pointer;
+        stroke-linecap: round;
+        animation: stroke-anim 4s ease-in-out infinite alternate;
+      }
+      .heart-outer {
+        transform-origin: 50%;
+        animation: heart-scaling 2s ease-in-out infinite alternate;
+      }
+      @keyframes stroke-anim {
+        from {
+          stroke-dasharray: 157px 157px;
+          stroke-dashoffset: 157px;
+        }
+        to {
+          stroke-dasharray: 157px 157px;
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes heart-scaling {
+        from {
+          transform: scale(.35) translateY(45px);
+          //transform: scale(0.5) translateY(0);
+        }
+        to {
+          transform: scale(.7) translateY(-10px);
+          //transform: scale(0.8) translateY(5px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <svg viewBox="0 0 50 50">
+        <g class="heart-outer">
+          <path
+            class="heart"
+            transform="translate(0,0) scale(0.95)"
+            d="M24.85,10.126c2.018-4.783,6.628-8.125,11.99-8.125c7.223,0,12.425,6.179,13.079,13.543
+c0,0,0.353,1.828-0.424,5.119c-1.058,4.482-3.545,8.464-6.898,11.503L24.85,48L7.402,32.165c-3.353-3.038-5.84-7.021-6.898-11.503
+c-0.777-3.291-0.424-5.119-0.424-5.119C0.734,8.179,5.936,2,13.159,2C18.522,2,22.832,5.343,24.85,10.126z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>
