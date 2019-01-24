@@ -1,0 +1,187 @@
+/*==========================================================
+
+    Layout of the project elements
+
+========================================================== */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background-color: #00ADEF;
+}
+
+.scene {
+	position: relative;
+	margin: 0 auto;
+	height: 100%;
+	width: 100vh * 4/3;
+}
+
+.waves {
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	&.waves-1 {
+		margin-left: 2px;
+		left: -200%;
+	}
+
+	&.waves-2 {
+		margin-left: 1px;
+		left: -100%;
+	}
+
+	&.waves-3 {
+		margin-left: -1px;
+		left: 100%;
+	}
+
+	&.waves-4 {
+		margin-left: -2px;
+		left: 200%;
+	}
+}
+
+.bottom {
+	z-index: 1;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: (135/$sceneHeight*100%);
+
+	&.bottom-1 {
+		margin-left: 2px;
+		left: -200%;
+	}
+
+	&.bottom-2 {
+		margin-left: 1px;
+		left: -100%;
+	}
+
+	&.bottom-3 {
+		margin-left: -1px;
+		left: 100%;
+	}
+
+	&.bottom-4 {
+		margin-left: -2px;
+		left: 200%;
+	}
+}
+
+.submarine {
+	left: 0;
+	top: 24%;
+	z-index: 2;
+	width: (517/$sceneWidth*100%);
+	height: (417.3/$sceneHeight*100%);
+}
+
+.school {
+	pointer-events: none;
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+.fish {
+	pointer-events: all;
+	z-index: 3;
+	$width: (131/$sceneWidth*20%);
+	$height: (88/$sceneHeight*20%);
+
+	@for $i from 1 through 10 {
+		&.fish-#{$i} {
+			top: 0% + random(90);
+			left: 0% + random(200);
+			$random: random(5);
+			width: $width * $random;
+			height: $height * $random;
+		}
+	}
+}
+
+.instructions,
+.message {
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	z-index: 20;
+	padding: 10px 15px;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	text-align: center;
+	@include vendorize(border-radius, 10px);
+	@include vendorize(box-sizing, border-box);
+
+	&.visible {
+		opacity: 1;
+	}
+}
+
+.instructions {
+	top: 5%;
+	right: 5%;
+	font-weight: bold;
+	font-size: 21px;
+	 
+	background-color: rgba(#DBF903, .85);
+}
+
+.message {
+	right: 5%;
+	bottom: 5%;
+	color: #036D8E;
+	background-color: rgba(#fff, .85);
+
+	&.done {
+		background-color: #FF5500;
+		color: #fff;
+		border: 2px solid rgba(#fff, .85);
+	}
+}
+
+/* Media Queries
+========================================================== */
+
+@media (max-aspect-ratio: 4/3) {
+
+	body {
+		background-color: #036D8E;
+	}
+
+	.scene {
+		width: 100%;
+		height: 100vw * 3/4;
+		background-color: #00ADEF;
+	}
+
+	.instructions,
+	.message {
+		font-size: 14px;
+		width: 90%;
+	}
+
+	.message {
+		bottom: 0%;
+	}
+}
+
+@media (max-aspect-ratio: 3/4) {
+	.message {
+		bottom: -50%;
+	}
+}

@@ -1,0 +1,189 @@
+/*==========================================================
+
+    SVG styling
+
+==========================================================*/
+
+svg {
+	display: block;
+	position: absolute;
+	overflow: hidden;
+
+	&, g {
+		@include vendorize(transform-style, preserve-3d); // force hardware acceleration
+		@include vendorize(backface-visibility, hidden); // prevent blink introduced by prev property
+	}
+}
+
+.bottom {
+	.style0{
+		fill:	#036962;
+	}
+	.style1{
+		fill:	#048C82;
+	}
+	.style2{
+		stroke:	#036962;
+		stroke-width:	4;
+		stroke-miterlimit:	10;
+		fill:	none;
+	}
+	.style3{
+		fill:	#9C6F13;
+	}
+	.style4{
+		fill:	#7D4217;
+	}
+	.style5{
+		fill:	#036D8E;
+	}
+}
+
+.waves {
+	.style0{
+		fill:	#7ACEEF;
+	}
+}
+
+.submarine {
+	.style0{
+		fill:	#DBF903;
+	}
+	.style1{
+		fill:	#FF5500;
+	}
+	.style10{
+		stroke:	#393434;
+		stroke-width:	6;
+		stroke-miterlimit:	10;
+		fill:	none;
+	}
+	.style11{
+		stroke:	#393434;
+		stroke-width:	8;
+		stroke-miterlimit:	10;
+		fill:	#F1FD9A;
+	}
+	.style12{
+		fill:	#F1FD9A;
+	}
+	.style13{
+		stroke:	#393434;
+		stroke-width:	5;
+		stroke-miterlimit:	10;
+		fill:	none;
+	}
+	.style14{
+		stroke:	#393434;
+		stroke-width:	5;
+		stroke-miterlimit:	10;
+		fill:	#FF5500;
+	}
+	.style15{
+		stroke:	#393434;
+		stroke-width:	4;
+		stroke-miterlimit:	10;
+		fill:	#DBF903;
+	}
+	.style16{
+		fill:	none;
+	}
+	.style2{
+		stroke:	#393434;
+		stroke-width:	4;
+		stroke-miterlimit:	10;
+		fill:	#D6E9FF;
+	}
+	.style3{
+		fill:	#393434;
+	}
+	.style4{
+		stroke:	#393434;
+		stroke-width:	8;
+		stroke-miterlimit:	10;
+		fill:	none;
+	}
+	.style5{
+		stroke:	#393434;
+		stroke-width:	8;
+		stroke-miterlimit:	10;
+		fill:	#DBF903;
+	}
+	.style6{
+		stroke:	#393434;
+		stroke-width:	4;
+		stroke-miterlimit:	10;
+		fill:	none;
+	}
+	.style7{
+		stroke:	#393434;
+		stroke-width:	8;
+		stroke-miterlimit:	10;
+		fill:	#FF5500;
+	}
+	.style8{
+		fill:	#D6E9FF;
+	}
+	.style9{
+		fill:	#FFFFFF;
+	}
+}
+
+.fish {
+
+	.style0{
+		fill:	#DBF903;
+	}
+	.style1{
+		stroke:	#C29533;
+		stroke-width:	4;
+		stroke-miterlimit:	10;
+		fill:	none;
+	}
+	.style2{
+		stroke:	#8A2424;
+		stroke-width:	2;
+		stroke-miterlimit:	10;
+		fill:	#FFFFFF;
+	}
+	.style3{
+		fill:	#393434;
+	}
+	.style4{
+		fill:	#FFFFFF;
+	}
+	.style5{
+		fill:	#8A2424;
+	}
+	.style6{
+		stroke:	#8A2424;
+		stroke-width:	4;
+		stroke-miterlimit:	10;
+		fill:	none;
+	}
+
+	@for $i from 1 through 10 {
+
+		&.fish-#{$i} {
+			$random: random(359);
+			
+			.style0 {
+				fill: hsl($random,98,49);
+			}
+
+			.style1 {
+				stroke: hsl($random,58,48);
+			}
+
+			.style3{
+				fill: hsl($random,5,21);
+			}
+			.style5{
+				fill: hsl($random,59,34);
+			}
+			.style6{
+				stroke:	hsl($random,59,34);
+			}
+		}
+	}
+}

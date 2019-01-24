@@ -1,0 +1,38 @@
+/*==========================================================
+
+    mixins + global project variables
+
+==========================================================*/
+
+
+/* Variables
+==========================================================*/
+
+$sceneWidth: 1024;
+$sceneHeight: 768;
+
+/* Mixins
+==========================================================*/
+
+@mixin vendorize($property, $value...) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

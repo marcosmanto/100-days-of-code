@@ -1,0 +1,110 @@
+/*==========================================================
+
+    (keyframe) animations
+
+==========================================================*/
+
+@include keyframes (bgMove) {
+	0% {
+		@include vendorize(transform, translate3d(0%, 0, 0));
+	}
+
+	100% {
+		@include vendorize(transform, translate3d(-100%, 0, 0));
+	}
+}
+
+@include keyframes (bob) {
+	0% {
+		@include vendorize(transform, translate3d(0, 0%, 0));
+	}
+
+	25% {
+		@include vendorize(transform, translate3d(0, -5%, 0));
+	}
+
+	50% {
+		@include vendorize(transform, translate3d(0, 0%, 0));
+	}
+
+	75% {
+		@include vendorize(transform, translate3d(0, 5%, 0));
+	}
+
+	100% {
+		@include vendorize(transform, translate3d(0, 0.001%, 0));
+	}
+}
+
+@include keyframes (spin) {
+	0% {
+		@include vendorize(transform, rotate(0deg));
+	}
+
+	100% {
+		@include vendorize(transform, rotate(360deg));
+	}
+}
+
+@include keyframes (fishMove) {
+	0% {
+		@include vendorize(transform, translate3d(0%, 0, 0));
+	}
+
+	100% {
+		@include vendorize(transform, translate3d(-300%, 0, 0));
+	}
+}
+
+@include keyframes (fishHover) {
+	0% {
+		fill: #DBF903;
+	}
+
+	50% {
+		fill: #F75C06;
+	}
+
+	100% {
+		fill: #DBF903;
+	}
+}
+
+@include keyframes (fishActive) {
+	0% {
+		@include vendorize(transform, translate3d(0%, 0%, 0));
+		width: (131 / $sceneWidth * 100%);
+		height: (88 / $sceneHeight * 100%);
+		opacity: 1; 
+	}
+
+	100% {
+		@include vendorize(transform, translate3d(-50%, -50%, 0));
+		width: 4 * (131 / $sceneWidth * 100%);
+		height: 4 * (88 / $sceneHeight * 100%);
+		opacity: 0; 
+	}
+}
+
+@include keyframes (shake) {
+	0% {
+		@include vendorize(transform, rotate(0deg));
+	}
+
+	25% {
+		@include vendorize(transform, rotate(-10deg));
+	}
+
+	50% {
+		@include vendorize(transform, rotate(0deg));
+	}
+
+	75% {
+		@include vendorize(transform, rotate(10deg));
+	}
+
+	100% {
+		@include vendorize(transform, rotate(0deg));
+	}
+}
+

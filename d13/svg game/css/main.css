@@ -1,0 +1,937 @@
+/*==========================================================
+
+    Main Sass: import partials
+
+==========================================================*/
+/*==========================================================
+
+    mixins + global project variables
+
+==========================================================*/
+/* Variables
+==========================================================*/
+/* Mixins
+==========================================================*/
+/*==========================================================
+
+    (keyframe) animations
+
+==========================================================*/
+@-webkit-keyframes bgMove {
+  0% {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes bgMove {
+  0% {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@-webkit-keyframes bob {
+  0% {
+    -webkit-transform: translate3d(0, 0%, 0);
+    transform: translate3d(0, 0%, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(0, -5%, 0);
+    transform: translate3d(0, -5%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 0%, 0);
+    transform: translate3d(0, 0%, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 5%, 0);
+    transform: translate3d(0, 5%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0.001%, 0);
+    transform: translate3d(0, 0.001%, 0);
+  }
+}
+
+@keyframes bob {
+  0% {
+    -webkit-transform: translate3d(0, 0%, 0);
+    transform: translate3d(0, 0%, 0);
+  }
+  25% {
+    -webkit-transform: translate3d(0, -5%, 0);
+    transform: translate3d(0, -5%, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, 0%, 0);
+    transform: translate3d(0, 0%, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 5%, 0);
+    transform: translate3d(0, 5%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0.001%, 0);
+    transform: translate3d(0, 0.001%, 0);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fishMove {
+  0% {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-300%, 0, 0);
+    transform: translate3d(-300%, 0, 0);
+  }
+}
+
+@keyframes fishMove {
+  0% {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-300%, 0, 0);
+    transform: translate3d(-300%, 0, 0);
+  }
+}
+
+@-webkit-keyframes fishHover {
+  0% {
+    fill: #DBF903;
+  }
+  50% {
+    fill: #F75C06;
+  }
+  100% {
+    fill: #DBF903;
+  }
+}
+
+@keyframes fishHover {
+  0% {
+    fill: #DBF903;
+  }
+  50% {
+    fill: #F75C06;
+  }
+  100% {
+    fill: #DBF903;
+  }
+}
+
+@-webkit-keyframes fishActive {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0);
+    transform: translate3d(0%, 0%, 0);
+    width: 12.79297%;
+    height: 11.45833%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    width: 51.17188%;
+    height: 45.83333%;
+    opacity: 0;
+  }
+}
+
+@keyframes fishActive {
+  0% {
+    -webkit-transform: translate3d(0%, 0%, 0);
+    transform: translate3d(0%, 0%, 0);
+    width: 12.79297%;
+    height: 11.45833%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    width: 51.17188%;
+    height: 45.83333%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+/*==========================================================
+
+    SVG styling
+
+==========================================================*/
+svg {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+}
+
+svg, svg g {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.bottom .style0 {
+  fill: #036962;
+}
+
+.bottom .style1 {
+  fill: #048C82;
+}
+
+.bottom .style2 {
+  stroke: #036962;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+.bottom .style3 {
+  fill: #9C6F13;
+}
+
+.bottom .style4 {
+  fill: #7D4217;
+}
+
+.bottom .style5 {
+  fill: #036D8E;
+}
+
+.waves .style0 {
+  fill: #7ACEEF;
+}
+
+.submarine .style0 {
+  fill: #DBF903;
+}
+
+.submarine .style1 {
+  fill: #FF5500;
+}
+
+.submarine .style10 {
+  stroke: #393434;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+.submarine .style11 {
+  stroke: #393434;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+  fill: #F1FD9A;
+}
+
+.submarine .style12 {
+  fill: #F1FD9A;
+}
+
+.submarine .style13 {
+  stroke: #393434;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+.submarine .style14 {
+  stroke: #393434;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+  fill: #FF5500;
+}
+
+.submarine .style15 {
+  stroke: #393434;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  fill: #DBF903;
+}
+
+.submarine .style16 {
+  fill: none;
+}
+
+.submarine .style2 {
+  stroke: #393434;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  fill: #D6E9FF;
+}
+
+.submarine .style3 {
+  fill: #393434;
+}
+
+.submarine .style4 {
+  stroke: #393434;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+.submarine .style5 {
+  stroke: #393434;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+  fill: #DBF903;
+}
+
+.submarine .style6 {
+  stroke: #393434;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+.submarine .style7 {
+  stroke: #393434;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+  fill: #FF5500;
+}
+
+.submarine .style8 {
+  fill: #D6E9FF;
+}
+
+.submarine .style9 {
+  fill: #FFFFFF;
+}
+
+.fish .style0 {
+  fill: #DBF903;
+}
+
+.fish .style1 {
+  stroke: #C29533;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+.fish .style2 {
+  stroke: #8A2424;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  fill: #FFFFFF;
+}
+
+.fish .style3 {
+  fill: #393434;
+}
+
+.fish .style4 {
+  fill: #FFFFFF;
+}
+
+.fish .style5 {
+  fill: #8A2424;
+}
+
+.fish .style6 {
+  stroke: #8A2424;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+.fish.fish-1 .style0 {
+  fill: #8502f7;
+}
+
+.fish.fish-1 .style1 {
+  stroke: #7f33c1;
+}
+
+.fish.fish-1 .style3 {
+  fill: #363338;
+}
+
+.fish.fish-1 .style5 {
+  fill: #5a248a;
+}
+
+.fish.fish-1 .style6 {
+  stroke: #5a248a;
+}
+
+.fish.fish-2 .style0 {
+  fill: #f70281;
+}
+
+.fish.fish-2 .style1 {
+  stroke: #c1337d;
+}
+
+.fish.fish-2 .style3 {
+  fill: #383336;
+}
+
+.fish.fish-2 .style5 {
+  fill: #8a2458;
+}
+
+.fish.fish-2 .style6 {
+  stroke: #8a2458;
+}
+
+.fish.fish-3 .style0 {
+  fill: #4802f7;
+}
+
+.fish.fish-3 .style1 {
+  stroke: #5c33c1;
+}
+
+.fish.fish-3 .style3 {
+  fill: #343338;
+}
+
+.fish.fish-3 .style5 {
+  fill: #41248a;
+}
+
+.fish.fish-3 .style6 {
+  stroke: #41248a;
+}
+
+.fish.fish-4 .style0 {
+  fill: #d3f702;
+}
+
+.fish.fish-4 .style1 {
+  stroke: #acc133;
+}
+
+.fish.fish-4 .style3 {
+  fill: #373833;
+}
+
+.fish.fish-4 .style5 {
+  fill: #7b8a24;
+}
+
+.fish.fish-4 .style6 {
+  stroke: #7b8a24;
+}
+
+.fish.fish-5 .style0 {
+  fill: #f73302;
+}
+
+.fish.fish-5 .style1 {
+  stroke: #c15033;
+}
+
+.fish.fish-5 .style3 {
+  fill: #383433;
+}
+
+.fish.fish-5 .style5 {
+  fill: #8a3824;
+}
+
+.fish.fish-5 .style6 {
+  stroke: #8a3824;
+}
+
+.fish.fish-6 .style0 {
+  fill: #f7029a;
+}
+
+.fish.fish-6 .style1 {
+  stroke: #c1338b;
+}
+
+.fish.fish-6 .style3 {
+  fill: #383336;
+}
+
+.fish.fish-6 .style5 {
+  fill: #8a2463;
+}
+
+.fish.fish-6 .style6 {
+  stroke: #8a2463;
+}
+
+.fish.fish-7 .style0 {
+  fill: #f74002;
+}
+
+.fish.fish-7 .style1 {
+  stroke: #c15733;
+}
+
+.fish.fish-7 .style3 {
+  fill: #383433;
+}
+
+.fish.fish-7 .style5 {
+  fill: #8a3d24;
+}
+
+.fish.fish-7 .style6 {
+  stroke: #8a3d24;
+}
+
+.fish.fish-8 .style0 {
+  fill: #4c02f7;
+}
+
+.fish.fish-8 .style1 {
+  stroke: #5e33c1;
+}
+
+.fish.fish-8 .style3 {
+  fill: #343338;
+}
+
+.fish.fish-8 .style5 {
+  fill: #42248a;
+}
+
+.fish.fish-8 .style6 {
+  stroke: #42248a;
+}
+
+.fish.fish-9 .style0 {
+  fill: #f70213;
+}
+
+.fish.fish-9 .style1 {
+  stroke: #c1333d;
+}
+
+.fish.fish-9 .style3 {
+  fill: #383333;
+}
+
+.fish.fish-9 .style5 {
+  fill: #8a242a;
+}
+
+.fish.fish-9 .style6 {
+  stroke: #8a242a;
+}
+
+.fish.fish-10 .style0 {
+  fill: #020ff7;
+}
+
+.fish.fish-10 .style1 {
+  stroke: #333bc1;
+}
+
+.fish.fish-10 .style3 {
+  fill: #333338;
+}
+
+.fish.fish-10 .style5 {
+  fill: #24298a;
+}
+
+.fish.fish-10 .style6 {
+  stroke: #24298a;
+}
+
+/*==========================================================
+
+    Layout of the project elements
+
+========================================================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #00ADEF;
+}
+
+.scene {
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+  width: 133.33333vh;
+}
+
+.waves {
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.waves.waves-1 {
+  margin-left: 2px;
+  left: -200%;
+}
+
+.waves.waves-2 {
+  margin-left: 1px;
+  left: -100%;
+}
+
+.waves.waves-3 {
+  margin-left: -1px;
+  left: 100%;
+}
+
+.waves.waves-4 {
+  margin-left: -2px;
+  left: 200%;
+}
+
+.bottom {
+  z-index: 1;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 17.57812%;
+}
+
+.bottom.bottom-1 {
+  margin-left: 2px;
+  left: -200%;
+}
+
+.bottom.bottom-2 {
+  margin-left: 1px;
+  left: -100%;
+}
+
+.bottom.bottom-3 {
+  margin-left: -1px;
+  left: 100%;
+}
+
+.bottom.bottom-4 {
+  margin-left: -2px;
+  left: 200%;
+}
+
+.submarine {
+  left: 0;
+  top: 24%;
+  z-index: 2;
+  width: 50.48828%;
+  height: 54.33594%;
+}
+
+.school {
+  pointer-events: none;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.fish {
+  pointer-events: all;
+  z-index: 3;
+}
+
+.fish.fish-1 {
+  top: 50%;
+  left: 80%;
+  width: 7.67578%;
+  height: 6.875%;
+}
+
+.fish.fish-2 {
+  top: 54%;
+  left: 14%;
+  width: 5.11719%;
+  height: 4.58333%;
+}
+
+.fish.fish-3 {
+  top: 49%;
+  left: 149%;
+  width: 12.79297%;
+  height: 11.45833%;
+}
+
+.fish.fish-4 {
+  top: 1%;
+  left: 92%;
+  width: 5.11719%;
+  height: 4.58333%;
+}
+
+.fish.fish-5 {
+  top: 83%;
+  left: 180%;
+  width: 12.79297%;
+  height: 11.45833%;
+}
+
+.fish.fish-6 {
+  top: 30%;
+  left: 62%;
+  width: 7.67578%;
+  height: 6.875%;
+}
+
+.fish.fish-7 {
+  top: 19%;
+  left: 47%;
+  width: 12.79297%;
+  height: 11.45833%;
+}
+
+.fish.fish-8 {
+  top: 56%;
+  left: 104%;
+  width: 10.23438%;
+  height: 9.16667%;
+}
+
+.fish.fish-9 {
+  top: 2%;
+  left: 46%;
+  width: 12.79297%;
+  height: 11.45833%;
+}
+
+.fish.fish-10 {
+  top: 54%;
+  left: 42%;
+  width: 7.67578%;
+  height: 6.875%;
+}
+
+.instructions,
+.message {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 20;
+  padding: 10px 15px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.instructions.visible,
+.message.visible {
+  opacity: 1;
+}
+
+.instructions {
+  top: 5%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 21px;
+  background-color: rgba(219, 249, 3, 0.85);
+}
+
+.message {
+  right: 5%;
+  bottom: 5%;
+  color: #036D8E;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.message.done {
+  background-color: #FF5500;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Media Queries
+========================================================== */
+@media (max-aspect-ratio: 4 / 3) {
+  body {
+    background-color: #036D8E;
+  }
+  .scene {
+    width: 100%;
+    height: 75vw;
+    background-color: #00ADEF;
+  }
+  .instructions,
+  .message {
+    font-size: 14px;
+    width: 90%;
+  }
+  .message {
+    bottom: 0%;
+  }
+}
+
+@media (max-aspect-ratio: 3 / 4) {
+  .message {
+    bottom: -50%;
+  }
+}
+
+/*==========================================================
+
+    Animations
+
+==========================================================*/
+.cssanimations .waves {
+  -webkit-animation: bgMove 30s linear infinite;
+  animation: bgMove 30s linear infinite;
+}
+
+.cssanimations .bottom {
+  -webkit-animation: bgMove 30s linear infinite;
+  animation: bgMove 30s linear infinite;
+}
+
+.cssanimations .submarine {
+  -webkit-animation: bob 4s linear infinite;
+  animation: bob 4s linear infinite;
+}
+
+.cssanimations .submarine, .cssanimations .submarine svg {
+  overflow: visible;
+}
+
+.cssanimations .submarine .propeller {
+  -webkit-transform-origin: 79px 257px;
+          transform-origin: 79px 257px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.cssanimations .school {
+  -webkit-animation: fishMove 15s linear infinite;
+  animation: fishMove 15s linear infinite;
+}
+
+.cssanimations .school .fish:hover .style0 {
+  -webkit-animation: fishHover 1.2s linear infinite;
+  animation: fishHover 1.2s linear infinite;
+}
+
+.cssanimations .school .fish:active {
+  -webkit-animation: fishActive 0.1s ease-out forwards;
+  animation: fishActive 0.1s ease-out forwards;
+}
+
+.cssanimations .shake {
+  -webkit-animation: shake 0.2s linear 3;
+  animation: shake 0.2s linear 3;
+}
+
+.no-cssanimations .scene {
+  opacity: .25;
+}
+
+.no-cssanimations .nosupport {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  z-index: 100;
+  width: 90%;
+  padding: 10px 15px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  color: #036D8E;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*# sourceMappingURL=main.css.map */

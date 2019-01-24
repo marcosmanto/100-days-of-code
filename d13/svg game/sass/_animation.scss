@@ -1,0 +1,71 @@
+/*==========================================================
+
+    Animations
+
+==========================================================*/
+
+.cssanimations {
+	.waves {
+		@include vendorize(animation, bgMove 30s linear infinite);
+	}
+
+	.bottom {
+		@include vendorize(animation, bgMove 30s linear infinite);
+	}
+
+	.submarine {
+
+		&, svg {
+			overflow: visible;
+		}
+
+		@include vendorize(animation, bob 4s linear infinite);
+
+		.propeller {  
+      transform-origin: 79px 257px;
+			@include vendorize(animation, spin 2s linear infinite);
+		}
+	}
+
+	.school {
+		@include vendorize(animation, fishMove 15s linear infinite );
+
+		.fish {
+			&:hover .style0 {
+				@include vendorize(animation, fishHover 1.2s linear infinite );
+			}
+
+			&:active {
+				@include vendorize(animation, fishActive .1s ease-out forwards );
+			}
+		}
+	}
+
+	.shake {
+		@include vendorize(animation, shake .2s linear 3 );
+	}
+}
+
+.no-cssanimations {
+
+	.scene {
+		opacity: .25;
+	}
+
+	.nosupport {
+		position: absolute;
+		left: 5%;
+		top: 5%;
+		z-index: 100;
+		width: 90%;
+		padding: 10px 15px;
+		text-align: center;
+		font-family: Arial, sans-serif;
+		font-weight: bold;
+		font-size: 36px;
+		color: #036D8E;
+		background-color: rgba(#fff, .85);
+		@include vendorize(border-radius, 10px);
+		@include vendorize(box-sizing, border-box);
+	}
+}
