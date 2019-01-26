@@ -20,7 +20,7 @@ function onLoad() {
 
 function initProgressBar(container) {
     var Shape = ProgressBar.Circle;
-
+    // remove var to make global rotatingBar
     var rotatingBar = new RotatingProgressBar(Shape, container, {
         color: '#333',
         trailColor: '#eee',
@@ -56,7 +56,8 @@ function initDropzone(rotatingBar) {
 
     dropzone.on('uploadprogress', function(file, percent, bytesSent) {
       console.log(bytesSent);
-        animateThrottled(percent / 100);
+      // rotatingBar.bar.animate(percent/100);
+      animateThrottled(percent / 100);
     });
 
     dropzone.on('success', function(file, response) {
